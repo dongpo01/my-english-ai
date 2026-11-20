@@ -4,398 +4,854 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My English AI</title>
+<title>My English AI - Business Vocabulary</title>
 <style>
-:root {
-  --bg:#fffaf5; --panel:#ffffff; --ink:#493d38;
-  --muted:#9b8b81; --primary:#d98e70;
-  --soft:#f8e9df; --green:#a9bca5;
-  --line:#f0e6de; --shadow:0 8px 28px #72513b0d;
+:root{
+ --bg:#fffaf5;--card:#fff;--text:#493c34;
+ --muted:#a18d7e;--primary:#df9273;--soft:#f8e9df;
+ --line:#f0e6df;--green:#779879;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);
- font-family:Inter,"Segoe UI","Microsoft YaHei",sans-serif}
-button,input{font:inherit}
-button{cursor:pointer}
-.app{max-width:1180px;margin:auto;padding:22px}
-header{display:flex;justify-content:space-between;align-items:center;
- gap:15px;margin-bottom:26px}
-.brand{display:flex;align-items:center;gap:11px}
-.logo{width:44px;height:44px;border-radius:15px;background:var(--soft);
- display:grid;place-items:center;font-size:23px}
-.brand h1{font-size:20px;margin:0}
-.brand p{font-size:12px;color:var(--muted);margin:3px 0}
-.header-actions{display:flex;gap:9px;align-items:center}
-.pill,.btn{border:1px solid var(--line);border-radius:12px;
- padding:10px 14px;background:white;color:var(--ink)}
-.btn.primary{background:var(--primary);color:white;border:0}
-nav{display:flex;gap:8px;overflow-x:auto;padding:4px 0 18px}
-nav button{white-space:nowrap;border:0;background:transparent;
- color:var(--muted);padding:11px 15px;border-radius:12px}
-nav button.active{background:var(--soft);color:#a65e43;font-weight:650}
-main{min-height:600px}
-.page{display:none}.page.active{display:block}
-h2{font-size:25px;margin:8px 0}
-.subtitle{color:var(--muted);font-size:14px;margin-bottom:23px}
-.card{background:var(--panel);border:1px solid var(--line);
- border-radius:20px;padding:22px;box-shadow:var(--shadow)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.hero{background:linear-gradient(120deg,#f8e4d7,#f8eee5);
- border-radius:24px;padding:30px;display:flex;justify-content:space-between;
- align-items:center;gap:20px;margin-bottom:18px}
-.hero h2{font-size:29px;max-width:500px}
-.hero p{color:#8b7163;line-height:1.7}
-.hero-art{font-size:76px}
-.stat{font-size:28px;font-weight:750;margin:12px 0 5px}
-.muted{color:var(--muted);font-size:13px}
-.progress{height:9px;background:#f1eae4;border-radius:10px;overflow:hidden}
-.progress span{display:block;height:100%;background:var(--green);
- border-radius:10px}
-.task{display:flex;align-items:center;gap:12px;padding:14px 0;
- border-bottom:1px solid var(--line)}
-.task:last-child{border:0}
-.task input{accent-color:var(--primary);width:18px;height:18px}
-.task.done .task-name{text-decoration:line-through;color:var(--muted)}
-.section-title{display:flex;justify-content:space-between;align-items:center;
- margin:24px 0 14px}
-.section-title h3{margin:0}
-.word{font-size:36px;font-weight:750;margin:10px 0}
-.phonetic{color:var(--muted)}
-.definition{font-size:18px;margin:12px 0}
-.example{background:#fbf5f0;border-radius:13px;padding:15px;
- line-height:1.7;margin:14px 0}
-.actions{display:flex;gap:9px;flex-wrap:wrap}
-input[type=text],textarea{width:100%;padding:13px;border:1px solid var(--line);
- border-radius:12px;background:white;color:var(--ink);outline:none}
-input:focus,textarea:focus{border-color:var(--primary)}
-.word-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.word-item{padding:16px;border:1px solid var(--line);border-radius:15px;
- background:white;cursor:pointer}
-.chatbox{height:330px;overflow:auto;background:#fcf8f4;
- border-radius:15px;padding:15px;margin:14px 0}
-.bubble{max-width:85%;padding:12px 15px;border-radius:15px;
- margin:10px 0;line-height:1.6;background:white}
-.bubble.me{margin-left:auto;background:#f5e4d9}
-.chat-input{display:flex;gap:9px}
-.chat-input input{flex:1;min-width:0}
-.choice{display:block;width:100%;text-align:left;background:white;
- border:1px solid var(--line);border-radius:12px;padding:14px;margin:9px 0}
-.choice:hover{border-color:var(--primary)}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:35px 0}
-.hidden{display:none}
-@media(max-width:700px){
- .app{padding:15px}.grid{grid-template-columns:1fr 1fr}
- .hero{padding:22px}.hero h2{font-size:23px}
- .hero-art{font-size:48px}.word-list{grid-template-columns:1fr}
- .card{padding:17px}
+body{
+ margin:0;background:var(--bg);color:var(--text);
+ font-family:Arial,"Microsoft YaHei",sans-serif;
 }
-@media(max-width:430px){
- .grid{grid-template-columns:1fr 1fr}
- .brand h1{font-size:17px}.brand p{display:none}
- .hero-art{display:none}
+button,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,select:focus-visible{
+ outline:3px solid #c28a70;outline-offset:3px
+}
+.wrap{max-width:1050px;margin:auto;padding:25px 22px 60px}
+header{
+ display:flex;align-items:center;justify-content:space-between;
+ gap:12px;margin-bottom:24px
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{background:var(--soft);padding:12px;border-radius:16px;font-size:25px}
+.logo h2{font-size:20px;margin:0}
+.logo p{font-size:12px;color:var(--muted);margin:5px 0 0}
+.lang,.back{
+ background:white;border:1px solid var(--line);
+ border-radius:12px;padding:10px 15px;color:var(--text)
+}
+nav{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:23px}
+nav a{
+ text-decoration:none;color:var(--muted);
+ padding:10px 14px;border-radius:12px;font-size:14px
+}
+nav .active{background:var(--soft);color:#a65f43;font-weight:bold}
+.hero{
+ background:linear-gradient(120deg,#f8e6da,#f8eee5);
+ border-radius:23px;padding:27px;margin-bottom:22px
+}
+.eyebrow{font-size:12px;color:#a77e67}
+h1{font-size:27px;margin:10px 0}
+.hero p{color:#947c6b;line-height:1.7;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:23px}
+.stat,.panel,.word-card,.question{
+ background:var(--card);border:1px solid var(--line);
+ border-radius:17px;padding:19px
+}
+.stat small{color:var(--muted)}
+.stat strong{display:block;font-size:25px;margin:9px 0}
+.section-head{
+ display:flex;justify-content:space-between;
+ align-items:center;gap:10px;margin:25px 0 13px
+}
+.section-head h2{font-size:19px;margin:0}
+.muted{color:var(--muted);font-size:13px}
+.progress{
+ height:9px;background:#f1e9e3;border-radius:20px;
+ overflow:hidden;margin:13px 0
+}
+.progress div{height:100%;background:var(--green);width:0;transition:.3s}
+.word-list{display:grid;gap:13px}
+.word-card{
+ display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center
+}
+.word-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.word{font-size:21px;font-weight:bold}
+.phonetic{color:var(--muted);font-size:13px}
+.meaning{font-size:15px;margin:10px 0 7px}
+.example{font-size:13px;line-height:1.7;color:#8d7b6d}
+.translation{color:var(--muted)}
+.actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.btn{
+ border:0;border-radius:11px;padding:10px 14px;
+ background:var(--soft);color:#98634d;font-size:13px
+}
+.btn.primary{background:var(--primary);color:white}
+.btn.green{background:#e9f1e7;color:#547b55}
+.btn.outline{background:white;border:1px solid var(--line);color:var(--text)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.tag{
+ font-size:11px;background:#f7f0e9;color:#a27e65;
+ padding:5px 8px;border-radius:8px
+}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tab{
+ padding:9px 15px;border:1px solid var(--line);
+ border-radius:10px;background:white;color:var(--muted)
+}
+.tab.active{background:var(--soft);color:#a65f43;border-color:var(--soft)}
+.panel{margin-top:17px}
+.panel h3{margin-top:0}
+.question{margin-bottom:14px}
+.question h3{font-size:16px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}
+.option{
+ background:#fff;border:1px solid var(--line);padding:12px;
+ border-radius:10px;text-align:left;color:var(--text)
+}
+.option.selected{border-color:var(--primary);background:var(--soft)}
+.option:disabled{cursor:default;opacity:1}
+.result{padding:15px;background:#f0f5ed;border-radius:12px;margin-top:15px}
+.empty{text-align:center;padding:35px;color:var(--muted)}
+footer{text-align:center;color:#b19c8e;font-size:12px;margin-top:45px}
+
+/* 自动朗读模块 */
+.reader-panel{
+ background:white;border:1px solid var(--line);
+ border-radius:18px;padding:22px;margin:22px 0
+}
+.reader-heading{
+ display:flex;justify-content:space-between;align-items:center;gap:12px
+}
+.reader-heading h2{font-size:19px;margin:0 0 8px}
+.reader-heading p{color:var(--muted);font-size:13px;margin:0;line-height:1.6}
+.reader-icon{font-size:30px;background:var(--soft);padding:12px;border-radius:14px}
+.reader-settings{
+ display:flex;align-items:center;justify-content:space-between;
+ gap:12px;margin:22px 0;font-size:14px
+}
+.reader-settings select{
+ border:1px solid var(--line);background:#fffaf5;
+ padding:10px 15px;border-radius:10px;color:var(--text);font-size:14px
+}
+.reader-current{
+ background:#fff8f2;border-radius:14px;padding:20px;text-align:center
+}
+.reader-word{font-size:32px;font-weight:bold;margin:13px 0;color:#a66a4f}
+.reader-buttons{display:flex;gap:10px;margin-top:17px}
+.reader-buttons button{flex:1}
+.reader-note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:14px}
+.reader-buttons button:disabled{opacity:.4;cursor:not-allowed}
+
+@media(max-width:650px){
+ .wrap{padding:18px 14px 40px}
+ .stats{gap:8px}
+ .stat{padding:13px}
+ .stat strong{font-size:20px}
+ .word-card{grid-template-columns:1fr}
+ .actions{justify-content:flex-start}
+ .options{grid-template-columns:1fr}
+ h1{font-size:23px}
+ .reader-panel{padding:16px}
+ .reader-buttons{flex-direction:column}
+ .reader-word{font-size:28px}
 }
 </style>
 </head>
+
 <body>
-<div class="app">
+<div class="wrap">
+
 <header>
- <div class="brand">
-  <div class="logo">🌷</div>
-  <div><h1>My English AI</h1><p id="tagline">Your friendly English companion</p></div>
+ <div class="logo">
+  <div class="logo-icon">🌷</div>
+  <div>
+   <h2>My English AI</h2>
+   <p id="subtitle">你的贴心英语伙伴 · 商务词汇</p>
+  </div>
  </div>
- <div class="header-actions">
-  <button class="pill" onclick="toggleLanguage()" id="langBtn">中 / EN</button>
- </div>
+ <button class="lang" onclick="toggleLang()">中 / EN</button>
 </header>
 
-<nav id="nav">
- <button class="active" data-page="home" onclick="showPage('home')">🏡 <span data-i="home">首页</span></button>
- <button data-page="words" onclick="showPage('words')">📚 <span data-i="words">每日词汇</span></button>
- <button data-page="chat" onclick="showPage('chat')">💬 <span data-i="chat">AI对话</span></button>
- <button data-page="reading" onclick="showPage('reading')">🎧 <span data-i="reading">听力与阅读</span></button>
- <button data-page="profile" onclick="showPage('profile')">🌱 <span data-i="profile">我的学习</span></button>
+<nav>
+ <a href="index.html" id="homeLink">🏠 首页</a>
+ <a href="vocabulary.html" class="active" id="vocabLink">📚 每日词汇</a>
+ <a href="#quiz" id="quizLink">🧠 单词测试</a>
+ <a href="#favorites" id="favLink">⭐ 我的收藏</a>
 </nav>
 
-<main>
-<section class="page active" id="home">
- <div class="hero">
+<section class="hero">
+ <div class="eyebrow" id="dateLabel">TODAY'S BUSINESS ENGLISH</div>
+ <h1 id="heroTitle">每天20个单词，轻松掌握商务英语。</h1>
+ <p id="heroDesc">从工作、会议、客户沟通开始，让英语成为你的职场优势。</p>
+ <span class="tag" id="levelTag">初级商务英语 · Elementary</span>
+</section>
+
+<section class="stats">
+ <div class="stat">
+  <small id="learnedLabel">今日已掌握</small>
+  <strong id="learnedCount">0 / 20</strong>
+  <small id="learnedHint">继续加油！</small>
+ </div>
+ <div class="stat">
+  <small id="favoriteLabel">我的收藏</small>
+  <strong id="favoriteCount">0</strong>
+  <small id="favoriteHint">积累你的生词本</small>
+ </div>
+ <div class="stat">
+  <small id="accuracyLabel">测试正确率</small>
+  <strong id="accuracyCount">--</strong>
+  <small id="accuracyHint">完成测试后显示</small>
+ </div>
+</section>
+
+<div class="section-head">
+ <h2 id="listTitle">📖 今日商务英语词汇</h2>
+ <span class="muted" id="listCount">20 words</span>
+</div>
+
+<div class="progress"><div id="progressBar"></div></div>
+<div class="muted" id="progressText">已掌握 0 / 20 个单词</div>
+
+<!-- 自动朗读控制面板 -->
+<section class="reader-panel">
+ <div class="reader-heading">
   <div>
-   <div class="muted" data-i="welcome">欢迎回来，今天也一起进步吧！</div>
-   <h2 data-i="hero">Small steps every day, big progress over time.</h2>
-   <p data-i="heroSub">每天只需15分钟，让英语慢慢成为你的习惯。</p>
-   <button class="btn primary" onclick="showPage('words')" data-i="start">开始今天的学习 →</button>
+   <h2 id="readerTitle">🔊 单词自动朗读</h2>
+   <p id="readerDesc">自动逐个朗读今天的20个商务英语单词</p>
   </div>
-  <div class="hero-art">☕📖</div>
+  <span class="reader-icon">🎧</span>
  </div>
- <div class="grid">
-  <div class="card"><div class="muted" data-i="today">今日学习时间</div>
-   <div class="stat" id="minutes">0 min</div><div class="muted" data-i="goal">目标：15分钟</div></div>
-  <div class="card"><div class="muted" data-i="learned">已学习单词</div>
-   <div class="stat" id="learned">0</div><div class="muted" data-i="wordsTotal">持续积累中</div></div>
-  <div class="card"><div class="muted" data-i="streak">连续学习</div>
-   <div class="stat" id="streak">1 day</div><div class="muted" data-i="keep">每天进步一点点</div></div>
+
+ <div class="reader-settings">
+  <label for="repeatSelect" id="repeatLabel">每个单词朗读次数</label>
+  <select id="repeatSelect">
+   <option value="1">1 遍</option>
+   <option value="2">2 遍</option>
+   <option value="3" selected>3 遍（推荐）</option>
+   <option value="4">4 遍</option>
+   <option value="5">5 遍</option>
+  </select>
  </div>
- <div class="section-title"><h3 data-i="plan">今日15分钟学习计划</h3>
- <span class="muted" id="taskProgress">0 / 4</span></div>
- <div class="card">
-  <div class="progress"><span id="taskBar" style="width:0%"></span></div>
-  <div id="tasks"></div>
+
+ <div class="reader-current">
+  <div class="muted" id="readerStatus">准备就绪，等待开始</div>
+  <div class="reader-word" id="readerWord">Ready</div>
+  <div class="muted" id="readerDetail">点击开始，自动朗读今日全部单词</div>
+  <div class="progress"><div id="readerProgress"></div></div>
+  <div class="muted" id="readerCounter">0 / 20</div>
+ </div>
+
+ <div class="reader-buttons">
+  <button class="btn primary" id="readerStart" onclick="startAutoRead()">▶ 开始自动朗读</button>
+  <button class="btn outline" id="readerStop" onclick="stopAutoRead()" disabled>■ 停止朗读</button>
+ </div>
+
+ <div class="reader-note" id="readerNote">
+  每个单词按照选择的次数自动重复朗读，单词之间间隔约1秒。
+  朗读过程中可以随时停止。建议使用 Chrome 或 Edge 浏览器。
  </div>
 </section>
 
-<section class="page" id="words">
- <h2 data-i="vocabTitle">每日词汇</h2>
- <p class="subtitle" data-i="vocabSub">每天掌握几个实用单词，积少成多。</p>
- <div class="card" style="margin-bottom:16px">
-  <div class="muted" data-i="todayWord">今日推荐单词</div>
-  <div class="word" id="wordName">confident</div>
-  <div class="phonetic" id="phonetic">/ˈkɒnfɪdənt/</div>
-  <div class="definition" id="meaning">自信的</div>
-  <div class="example" id="example">I feel confident when I speak English.</div>
-  <div class="actions">
-   <button class="btn primary" onclick="speakWord()" data-i="listen">🔊 听发音</button>
-   <button class="btn" onclick="saveWord()" id="saveBtn" data-i="save">♡ 收藏单词</button>
-   <button class="btn" onclick="nextWord()" data-i="next">下一个 →</button>
-  </div>
- </div>
- <input type="text" id="searchWord" placeholder="搜索单词 / Search words" oninput="renderWords()">
- <div class="section-title"><h3 data-i="wordBank">词汇库</h3><span class="muted" id="wordCount"></span></div>
- <div class="word-list" id="wordList"></div>
-</section>
+<div class="tabs">
+ <button class="tab active" onclick="setFilter('all',this)" id="allTab">全部单词</button>
+ <button class="tab" onclick="setFilter('unlearned',this)" id="unlearnedTab">待学习</button>
+ <button class="tab" onclick="setFilter('learned',this)" id="learnedTab">已掌握</button>
+</div>
 
-<section class="page" id="chat">
- <h2 data-i="chatTitle">和你的英语伙伴聊一聊</h2>
- <p class="subtitle" data-i="chatSub">不用害怕犯错，我们一起慢慢练习。</p>
- <div class="card">
-  <div class="muted" data-i="scenario">练习场景：日常交流</div>
-  <div class="chatbox" id="chatbox">
-   <div class="bubble">Hello! 😊 I'm your English practice partner. How are you today?</div>
-   <div class="bubble">你好！我是你的英语练习伙伴。今天感觉怎么样？</div>
-  </div>
-  <div class="chat-input">
-   <input id="chatInput" type="text" placeholder="Type your answer in English..."
-    onkeydown="if(event.key==='Enter')sendMessage()">
-   <button class="btn primary" onclick="sendMessage()" data-i="send">发送</button>
-  </div>
-  <p class="muted" data-i="chatNote">当前为本地练习演示版，尚未连接真正的AI模型。</p>
+<div class="word-list" id="wordList"></div>
+
+<section id="quiz" class="panel">
+ <div class="section-head">
+  <h2 id="quizTitle">🧠 今日单词测试</h2>
+  <span class="muted" id="quizCount">10 questions</span>
+ </div>
+ <p class="muted" id="quizDesc">检验今天的学习成果，完成10道选择题。</p>
+ <div id="quizArea">
+  <button class="btn primary" onclick="startQuiz()" id="startQuiz">开始测试 →</button>
  </div>
 </section>
 
-<section class="page" id="reading">
- <h2 data-i="readingTitle">听力与阅读</h2>
- <p class="subtitle" data-i="readingSub">听一听，读一读，让英语融入日常。</p>
- <div class="card">
-  <div class="muted">LEVEL 1 · DAILY LIFE</div>
-  <h3 id="storyTitle">A Good Morning</h3>
-  <p id="storyText" style="line-height:2;font-size:17px">
-   Every morning, I wake up at seven.
-   I drink a cup of warm water and have breakfast.
-   Then I go to work. I like starting my day with a smile.
-  </p>
-  <div class="actions">
-   <button class="btn primary" onclick="speakStory()" data-i="readAloud">🔊 朗读文章</button>
-   <button class="btn" onclick="showQuestion()" data-i="quiz">开始理解测试</button>
-  </div>
-  <div id="quizArea" class="hidden">
-   <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
-   <h3 data-i="question">What time does the person wake up?</h3>
-   <button class="choice" onclick="answerQuiz(false)">A. At six o'clock</button>
-   <button class="choice" onclick="answerQuiz(true)">B. At seven o'clock</button>
-   <button class="choice" onclick="answerQuiz(false)">C. At eight o'clock</button>
-   <p id="quizResult" class="muted"></p>
-  </div>
+<section id="favorites" class="panel">
+ <div class="section-head">
+  <h2 id="favTitle">⭐ 我的收藏夹</h2>
+  <span class="muted" id="favTotal">0 words</span>
  </div>
+ <div id="favoriteList"></div>
 </section>
 
-<section class="page" id="profile">
- <h2 data-i="profileTitle">我的学习档案</h2>
- <p class="subtitle" data-i="profileSub">每一次练习都值得记录。</p>
- <div class="grid">
-  <div class="card"><div class="muted" data-i="totalMinutes">累计学习分钟</div><div class="stat" id="totalMinutes">0</div></div>
-  <div class="card"><div class="muted" data-i="favorites">收藏单词</div><div class="stat" id="favorites">0</div></div>
-  <div class="card"><div class="muted" data-i="completed">完成任务</div><div class="stat" id="completed">0</div></div>
- </div>
- <div class="section-title"><h3 data-i="settings">学习设置</h3></div>
- <div class="card">
-  <p data-i="languageSetting">界面语言：中英双语</p>
-  <button class="btn" onclick="toggleLanguage()" data-i="switchLang">切换中英文</button>
-  <p class="muted" style="margin-top:20px" data-i="localNote">学习数据保存在当前浏览器中。更换浏览器或清除网站数据可能导致记录丢失。</p>
-  <button class="btn" onclick="resetData()" data-i="reset">重置本地学习记录</button>
- </div>
-</section>
-</main>
 <footer>Made with ☕ and love · My English AI</footer>
 </div>
 
 <script>
-const dict={
+// ================================
+// 1. 每日商务英语词汇库
+// ================================
+
+const words = [
+ {w:"meeting",p:"/ˈmiːtɪŋ/",m:"会议",en:"a planned discussion",e:"We have a meeting at 10 a.m.",t:"我们上午10点有一个会议。"},
+ {w:"email",p:"/ˈiːmeɪl/",m:"电子邮件",en:"a message sent electronically",e:"Please send me an email.",t:"请给我发一封电子邮件。"},
+ {w:"schedule",p:"/ˈskedʒuːl/",m:"日程安排",en:"a plan of activities and times",e:"What is your schedule today?",t:"你今天的日程安排是什么？"},
+ {w:"manager",p:"/ˈmænɪdʒər/",m:"经理",en:"a person who leads a team",e:"My manager is very friendly.",t:"我的经理非常友好。"},
+ {w:"customer",p:"/ˈkʌstəmər/",m:"客户",en:"a person who buys goods or services",e:"The customer needs help.",t:"这位客户需要帮助。"},
+ {w:"price",p:"/praɪs/",m:"价格",en:"the amount of money something costs",e:"What is the price of this product?",t:"这个产品的价格是多少？"},
+ {w:"order",p:"/ˈɔːrdər/",m:"订单；订购",en:"a request to buy something",e:"We received a new order.",t:"我们收到了一份新订单。"},
+ {w:"invoice",p:"/ˈɪnvɔɪs/",m:"发票",en:"a document showing money owed",e:"Please check the invoice.",t:"请检查一下发票。"},
+ {w:"payment",p:"/ˈpeɪmənt/",m:"付款；支付",en:"money paid for goods or services",e:"The payment is complete.",t:"付款已经完成。"},
+ {w:"delivery",p:"/dɪˈlɪvəri/",m:"交货；配送",en:"the act of bringing goods to someone",e:"The delivery is tomorrow.",t:"明天交货。"},
+ {w:"product",p:"/ˈprɑːdʌkt/",m:"产品",en:"something made to be sold",e:"This is our best-selling product.",t:"这是我们最畅销的产品。"},
+ {w:"service",p:"/ˈsɜːrvɪs/",m:"服务",en:"work done to help someone",e:"We provide good service.",t:"我们提供优质服务。"},
+ {w:"office",p:"/ˈɔːfɪs/",m:"办公室",en:"a place where people work",e:"I work in an office.",t:"我在办公室工作。"},
+ {w:"report",p:"/rɪˈpɔːrt/",m:"报告",en:"a document giving information",e:"I need to write a report.",t:"我需要写一份报告。"},
+ {w:"deadline",p:"/ˈdedlaɪn/",m:"截止日期",en:"the final time to finish something",e:"The deadline is Friday.",t:"截止日期是星期五。"},
+ {w:"confirm",p:"/kənˈfɜːrm/",m:"确认",en:"to say something is correct or certain",e:"Please confirm the meeting time.",t:"请确认会议时间。"},
+ {w:"discuss",p:"/dɪˈskʌs/",m:"讨论",en:"to talk about something together",e:"Let's discuss the plan.",t:"让我们讨论一下这个计划。"},
+ {w:"available",p:"/əˈveɪləbl/",m:"有空的；可用的",en:"free or ready to be used",e:"Are you available tomorrow?",t:"你明天有空吗？"},
+ {w:"improve",p:"/ɪmˈpruːv/",m:"改善；提高",en:"to make something better",e:"I want to improve my English.",t:"我想提高我的英语水平。"},
+ {w:"welcome",p:"/ˈwelkəm/",m:"欢迎",en:"to greet someone in a friendly way",e:"Welcome to our company.",t:"欢迎来到我们公司。"}
+];
+
+// ================================
+// 2. 中英文界面
+// ================================
+
+const translations = {
  zh:{
- home:"首页",words:"每日词汇",chat:"AI对话",reading:"听力与阅读",profile:"我的学习",
- welcome:"欢迎回来，今天也一起进步吧！",
- hero:"每天一点点进步，时间会给你答案。",
- heroSub:"每天只需15分钟，让英语慢慢成为你的习惯。",
- start:"开始今天的学习 →",today:"今日学习时间",goal:"目标：15分钟",
- learned:"已学习单词",wordsTotal:"持续积累中",streak:"连续学习",keep:"每天进步一点点",
- plan:"今日15分钟学习计划",vocabTitle:"每日词汇",
- vocabSub:"每天掌握几个实用单词，积少成多。",todayWord:"今日推荐单词",
- listen:"🔊 听发音",save:"♡ 收藏单词",saved:"♥ 已收藏",next:"下一个 →",
- wordBank:"词汇库",chatTitle:"和你的英语伙伴聊一聊",
- chatSub:"不用害怕犯错，我们一起慢慢练习。",
- scenario:"练习场景：日常交流",send:"发送",
- chatNote:"当前为本地练习演示版，尚未连接真正的AI模型。",
- readingTitle:"听力与阅读",readingSub:"听一听，读一读，让英语融入日常。",
- readAloud:"🔊 朗读文章",quiz:"开始理解测试",
- question:"这个人几点起床？",profileTitle:"我的学习档案",
- profileSub:"每一次练习都值得记录。",totalMinutes:"累计学习分钟",
- favorites:"收藏单词",completed:"完成任务",settings:"学习设置",
- languageSetting:"界面语言：中英双语",switchLang:"切换中英文",
- localNote:"学习数据保存在当前浏览器中。更换浏览器或清除网站数据可能导致记录丢失。",
- reset:"重置本地学习记录"
+  subtitle:"你的贴心英语伙伴 · 商务词汇",
+  hero:"每天20个单词，轻松掌握商务英语。",
+  desc:"从工作、会议、客户沟通开始，让英语成为你的职场优势。",
+  level:"初级商务英语 · Elementary",
+  learned:"今日已掌握",learnedHint:"继续加油！",
+  favorite:"我的收藏",favoriteHint:"积累你的生词本",
+  accuracy:"测试正确率",accuracyHint:"完成测试后显示",
+  list:"📖 今日商务英语词汇",
+  all:"全部单词",unlearned:"待学习",mastered:"已掌握",
+  progress:"已掌握",quiz:"🧠 今日单词测试",
+  quizDesc:"检验今天的学习成果，完成10道选择题。",
+  start:"开始测试 →",favorites:"⭐ 我的收藏夹",
+  empty:"这里暂时没有单词。",mark:"标记已掌握",
+  undo:"取消掌握",save:"收藏",remove:"取消收藏",
+  example:"例句",translation:"翻译",speak:"播放发音",
+  finish:"测试完成！",score:"你的成绩：",
+  restart:"重新测试",next:"下一题",question:"第",
+  submit:"提交答案",home:"🏠 首页",vocab:"📚 每日词汇",
+  quizNav:"🧠 单词测试",favNav:"⭐ 我的收藏",
+  none:"还没有收藏单词。",words:"个单词",
+  readerTitle:"🔊 单词自动朗读",
+  readerDesc:"自动逐个朗读今天的20个商务英语单词",
+  repeatLabel:"每个单词朗读次数",
+  readerStart:"▶ 开始自动朗读",readerStop:"■ 停止朗读",
+  readerReady:"准备就绪，等待开始",
+  readerNote:"每个单词按照选择的次数自动重复朗读，单词之间间隔约1秒。朗读过程中可以随时停止。建议使用 Chrome 或 Edge 浏览器。",
+  readerDetail:"点击开始，自动朗读今日全部单词",
+  reading:"正在朗读第",repeat:"第",completed:"全部完成！",
+  completedDetail:"恭喜你，今天20个单词已经全部朗读完成！",
+  stopped:"已停止",stoppedDetail:"可以随时重新开始朗读。",
+  readerDone:"朗读任务已完成"
  },
  en:{
- home:"Home",words:"Vocabulary",chat:"AI Chat",reading:"Listening & Reading",profile:"My Learning",
- welcome:"Welcome back! Let's grow together today.",
- hero:"Small steps every day, big progress over time.",
- heroSub:"Just 15 minutes a day to make English a natural habit.",
- start:"Start today's learning →",today:"Today's study time",goal:"Goal: 15 minutes",
- learned:"Words learned",wordsTotal:"Keep building your vocabulary",streak:"Learning streak",keep:"A little progress every day",
- plan:"Today's 15-minute plan",vocabTitle:"Daily Vocabulary",
- vocabSub:"Learn a few useful words every day.",todayWord:"Word of the day",
- listen:"🔊 Listen",save:"♡ Save word",saved:"♥ Saved",next:"Next →",
- wordBank:"Word bank",chatTitle:"Talk with your English buddy",
- chatSub:"Don't be afraid of mistakes. Let's practice together.",
- scenario:"Practice: Daily conversation",send:"Send",
- chatNote:"This is a local demo. It is not connected to a real AI model yet.",
- readingTitle:"Listening & Reading",readingSub:"Listen and read. Bring English into your everyday life.",
- readAloud:"🔊 Read aloud",quiz:"Start quiz",
- question:"What time does the person wake up?",profileTitle:"My Learning Profile",
- profileSub:"Every practice session matters.",totalMinutes:"Total study minutes",
- favorites:"Favorite words",completed:"Tasks completed",settings:"Settings",
- languageSetting:"Language: Chinese & English",switchLang:"Switch language",
- localNote:"Your learning data is stored in this browser. Clearing site data may erase your records.",
- reset:"Reset local learning records"
+  subtitle:"Your friendly English partner · Business Vocabulary",
+  hero:"Learn 20 words a day. Build your business English.",
+  desc:"Start with work, meetings and customer communication. Make English your workplace advantage.",
+  level:"Elementary Business English",
+  learned:"Mastered today",learnedHint:"Keep going!",
+  favorite:"My favorites",favoriteHint:"Build your vocabulary bank",
+  accuracy:"Quiz accuracy",accuracyHint:"Complete a quiz to see your score",
+  list:"📖 Today's Business Vocabulary",
+  all:"All words",unlearned:"To learn",mastered:"Mastered",
+  progress:"Mastered",quiz:"🧠 Daily Vocabulary Quiz",
+  quizDesc:"Test your learning with 10 multiple-choice questions.",
+  start:"Start Quiz →",favorites:"⭐ My Favorites",
+  empty:"No words here yet.",mark:"Mark as learned",
+  undo:"Undo",save:"Save",remove:"Remove",
+  example:"Example",translation:"Translation",speak:"Listen",
+  finish:"Quiz completed!",score:"Your score: ",
+  restart:"Try again",next:"Next question",question:"Question",
+  submit:"Submit answers",home:"🏠 Home",vocab:"📚 Vocabulary",
+  quizNav:"🧠 Quiz",favNav:"⭐ Favorites",
+  none:"No favorites yet.",words:"words",
+  readerTitle:"🔊 Automatic Word Reading",
+  readerDesc:"Automatically read all 20 business words",
+  repeatLabel:"Repeats per word",
+  readerStart:"▶ Start Reading",readerStop:"■ Stop Reading",
+  readerReady:"Ready to start",
+  readerNote:"Each word repeats the selected number of times, with about a one-second pause between words. You can stop anytime. Chrome or Edge is recommended.",
+  readerDetail:"Click start to read all today's words",
+  reading:"Reading word ",repeat:"Repeat ",completed:"Completed!",
+  completedDetail:"Congratulations! You finished all 20 words today.",
+  stopped:"Stopped",stoppedDetail:"You can restart anytime.",
+  readerDone:"Reading completed"
  }
 };
-const words=[
- {w:"confident",p:"/ˈkɒnfɪdənt/",zh:"自信的",en:"feeling sure about yourself",ex:"I feel confident when I speak English."},
- {w:"improve",p:"/ɪmˈpruːv/",zh:"提高；改善",en:"to become better",ex:"I want to improve my English."},
- {w:"opportunity",p:"/ˌɒpəˈtjuːnəti/",zh:"机会",en:"a chance to do something",ex:"This is a great opportunity."},
- {w:"comfortable",p:"/ˈkʌmftəbəl/",zh:"舒适的",en:"making you feel relaxed",ex:"I feel comfortable here."},
- {w:"practice",p:"/ˈpræktɪs/",zh:"练习",en:"to do something regularly",ex:"Practice makes progress."},
- {w:"conversation",p:"/ˌkɒnvəˈseɪʃən/",zh:"对话",en:"a talk between people",ex:"We had a nice conversation."},
- {w:"curious",p:"/ˈkjʊəriəs/",zh:"好奇的",en:"eager to know something",ex:"I'm curious about this story."},
- {w:"habit",p:"/ˈhæbɪt/",zh:"习惯",en:"something you do regularly",ex:"Reading is a good habit."}
-];
-const tasks=[
- ["学习5个新单词","Learn 5 new words"],
- ["练习5分钟英语对话","Practice English for 5 minutes"],
- ["完成一篇短文阅读","Read a short passage"],
- ["复习今天的学习内容","Review today's learning"]
-];
-let lang=localStorage.getItem("mea_lang")||"zh";
-let current=0;
-let favorites=JSON.parse(localStorage.getItem("mea_fav")||"[]");
-let learned=JSON.parse(localStorage.getItem("mea_learned")||"[]");
-let checked=JSON.parse(localStorage.getItem("mea_tasks")||"[false,false,false,false]");
-let total=Number(localStorage.getItem("mea_minutes")||0);
-function t(key){return dict[lang][key]||key}
-function save(){localStorage.setItem("mea_fav",JSON.stringify(favorites));
- localStorage.setItem("mea_learned",JSON.stringify(learned));
- localStorage.setItem("mea_tasks",JSON.stringify(checked));
- localStorage.setItem("mea_minutes",total)}
-function toggleLanguage(){lang=lang==="zh"?"en":"zh";
- localStorage.setItem("mea_lang",lang);render()}
-function showPage(id){
- document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
- document.getElementById(id).classList.add("active");
- document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x.dataset.page===id));
- if(id==="profile")updateStats();
+
+let lang="zh";
+let filter="all";
+let learned=new Set();
+let favorites=new Set();
+let questions=[];
+let answers=[];
+let questionIndex=0;
+let lastScore=null;
+
+function getToday(){
+ const d=new Date();
+ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 }
-function render(){
+
+const storageKey="myEnglishBusinessV2";
+let saved={};
+
+try{
+ saved=JSON.parse(localStorage.getItem(storageKey)||"{}");
+}catch(e){
+ saved={};
+}
+
+const today=getToday();
+
+if(saved.date===today){
+ learned=new Set(saved.learned||[]);
+}
+favorites=new Set(saved.favorites||[]);
+lastScore=saved.lastScore??null;
+
+function persist(){
+ try{
+  localStorage.setItem(storageKey,JSON.stringify({
+   date:today,
+   learned:[...learned],
+   favorites:[...favorites],
+   lastScore
+  }));
+ }catch(e){
+  console.warn("无法保存学习记录",e);
+ }
+}
+
+function T(key){
+ return translations[lang][key]||key;
+}
+
+function toggleLang(){
+ lang=lang==="zh"?"en":"zh";
  document.documentElement.lang=lang==="zh"?"zh-CN":"en";
- document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));
- document.getElementById("tagline").textContent=lang==="zh"?"你的贴心英语伙伴":"Your friendly English companion";
- document.getElementById("langBtn").textContent=lang==="zh"?"中 / EN":"EN / 中";
- renderTasks();renderWord();renderWords();updateStats();
+ render();
 }
-function renderTasks(){
- const area=document.getElementById("tasks");
- area.innerHTML=tasks.map((task,i)=>`<label class="task ${checked[i]?"done":""}">
- <input type="checkbox" ${checked[i]?"checked":""} onchange="toggleTask(${i},this.checked)">
- <span class="task-name">${task[lang==="zh"?0:1]}</span></label>`).join("");
- const n=checked.filter(Boolean).length;
- document.getElementById("taskProgress").textContent=n+" / 4";
- document.getElementById("taskBar").style.width=n*25+"%";
-}
-function toggleTask(i,value){checked[i]=value;if(value)total+=3;save();renderTasks();updateStats()}
-function renderWord(){
- const x=words[current];document.getElementById("wordName").textContent=x.w;
- document.getElementById("phonetic").textContent=x.p;
- document.getElementById("meaning").textContent=lang==="zh"?x.zh:x.en;
- document.getElementById("example").textContent=x.ex;
- document.getElementById("saveBtn").textContent=favorites.includes(x.w)?t("saved"):t("save");
-}
-function nextWord(){current=(current+1)%words.length;renderWord()}
-function saveWord(){
- const w=words[current].w;
- favorites=favorites.includes(w)?favorites.filter(x=>x!==w):[...favorites,w];
- if(!learned.includes(w))learned.push(w);
- save();renderWord();renderWords();updateStats()
-}
-function renderWords(){
- const q=(document.getElementById("searchWord")?.value||"").toLowerCase();
- const list=words.filter(x=>(x.w+x.zh+x.en).toLowerCase().includes(q));
- document.getElementById("wordCount").textContent=list.length+" words";
- document.getElementById("wordList").innerHTML=list.map(x=>`
- <div class="word-item" onclick="selectWord('${x.w}')">
- <b>${x.w}</b> <span class="phonetic">${x.p}</span>
- <div class="muted">${lang==="zh"?x.zh:x.en}</div>
- </div>`).join("");
-}
-function selectWord(w){current=words.findIndex(x=>x.w===w);renderWord();window.scrollTo(0,0)}
+
+// ================================
+// 3. 单词发音
+// ================================
+
 function speak(text){
- if(!("speechSynthesis" in window)){alert("Your browser does not support speech.");return}
- speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);
- u.lang="en-US";u.rate=.85;speechSynthesis.speak(u)
+ if(!("speechSynthesis" in window)){
+  alert("当前浏览器不支持语音朗读，请使用最新版 Chrome 或 Edge。");
+  return;
+ }
+ window.speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(text);
+ u.lang="en-US";
+ u.rate=.85;
+ u.pitch=1;
+ u.volume=1;
+ window.speechSynthesis.speak(u);
 }
-function speakWord(){speak(words[current].w)}
-function speakStory(){speak(document.getElementById("storyText").textContent)}
-function sendMessage(){
- const input=document.getElementById("chatInput"),text=input.value.trim();
- if(!text)return;
- const box=document.getElementById("chatbox");
- box.innerHTML+=`<div class="bubble me"></div>`;
- box.lastElementChild.textContent=text;input.value="";
- const lower=text.toLowerCase();
- let reply="That's great! 😊 Could you tell me a little more?";
- if(/i am fine|i'm fine|good|great/.test(lower))reply="Wonderful! What did you do today?";
- else if(/hello|hi|hey/.test(lower))reply="Hello! Nice to meet you. How is your day going?";
- else if(/i like/.test(lower))reply="Nice! A more natural way to continue is: 'I really enjoy it because...'";
- else if(/\bi go\b/.test(lower)&&lower.includes("yesterday"))reply="Good try! For yesterday, say 'I went...' instead of 'I go...'.";
- else if(text.length<8)reply="Good start! Try making a complete sentence. 😊";
- else reply="Well done! Your sentence is understandable. Keep practicing! Can you give me another example?";
- box.innerHTML+=`<div class="bubble"></div>`;
- box.lastElementChild.textContent=reply;
- box.scrollTop=box.scrollHeight;total+=1;save();updateStats()
-}
-function showQuestion(){document.getElementById("quizArea").classList.remove("hidden")}
-function answerQuiz(ok){
- const result=document.getElementById("quizResult");
- result.textContent=ok?(lang==="zh"?"回答正确！做得很好！ 🎉":"Correct! Well done! 🎉"):(lang==="zh"?"再试一次，加油！":"Try again. You can do it!");
- if(ok){total+=2;save();updateStats()}
-}
+
+// ================================
+// 4. 学习进度
+// ================================
+
 function updateStats(){
- document.getElementById("minutes").textContent=total+" min";
- document.getElementById("learned").textContent=learned.length;
- document.getElementById("streak").textContent="1 "+(lang==="zh"?"天":"day");
- document.getElementById("totalMinutes").textContent=total;
- document.getElementById("favorites").textContent=favorites.length;
- document.getElementById("completed").textContent=checked.filter(Boolean).length;
+ document.getElementById("learnedCount").textContent=learned.size+" / 20";
+ document.getElementById("favoriteCount").textContent=favorites.size;
+ document.getElementById("accuracyCount").textContent=
+  lastScore===null?"--":lastScore+"%";
+
+ document.getElementById("progressBar").style.width=
+  (learned.size/20*100)+"%";
+
+ document.getElementById("progressText").textContent=
+  T("progress")+" "+learned.size+" / 20";
+
+ document.getElementById("listCount").textContent="20 "+T("words");
+ document.getElementById("favTotal").textContent=favorites.size+" "+T("words");
 }
-function resetData(){
- if(!confirm(lang==="zh"?"确定重置所有本地学习记录吗？":"Reset all local learning records?"))return;
- favorites=[];learned=[];checked=[false,false,false,false];total=0;save();render()
+
+// ================================
+// 5. 单词卡片
+// ================================
+
+function setFilter(value,el){
+ filter=value;
+ document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+ el.classList.add("active");
+ renderWords();
 }
+
+function wordCard(index,showRemove=false){
+ const x=words[index];
+ const done=learned.has(x.w);
+ const fav=favorites.has(x.w);
+ const meaning=lang==="zh"?x.m:x.en;
+
+ return `
+ <article class="word-card">
+  <div>
+   <div class="word-top">
+    <span class="word">${x.w}</span>
+    <span class="phonetic">${x.p}</span>
+    ${done?'<span class="tag">✓ '+(lang==="zh"?"已掌握":"Mastered")+'</span>':""}
+   </div>
+   <div class="meaning">${meaning}</div>
+   <div class="example">
+    ${T("example")}：${x.e}<br>
+    <span class="translation">${T("translation")}：${x.t}</span>
+   </div>
+  </div>
+  <div class="actions">
+   <button class="btn outline" onclick="speak('${x.w}')">🔊 ${T("speak")}</button>
+   ${showRemove?
+    `<button class="btn" onclick="toggleFavorite('${x.w}')">${T("remove")}</button>`:
+    `<button class="btn" onclick="toggleFavorite('${x.w}')">${fav?"⭐":"☆"} ${fav?T("remove"):T("save")}</button>
+     <button class="btn ${done?"green":"primary"}" onclick="toggleLearned('${x.w}')">${done?T("undo"):T("mark")}</button>`
+   }
+  </div>
+ </article>`;
+}
+
+function renderWords(){
+ const list=words.map((x,i)=>({x,i})).filter(({x})=>
+  filter==="all"||
+  (filter==="learned"&&learned.has(x.w))||
+  (filter==="unlearned"&&!learned.has(x.w))
+ );
+
+ document.getElementById("wordList").innerHTML=list.length?
+  list.map(({i})=>wordCard(i)).join(""):
+  `<div class="empty">${T("empty")}</div>`;
+}
+
+function renderFavorites(){
+ const list=words.map((x,i)=>({x,i})).filter(({x})=>favorites.has(x.w));
+
+ document.getElementById("favoriteList").innerHTML=list.length?
+  list.map(({i})=>wordCard(i,true)).join(""):
+  `<div class="empty">${T("none")}</div>`;
+}
+
+function toggleLearned(w){
+ learned.has(w)?learned.delete(w):learned.add(w);
+ persist();
+ updateStats();
+ renderWords();
+}
+
+function toggleFavorite(w){
+ favorites.has(w)?favorites.delete(w):favorites.add(w);
+ persist();
+ updateStats();
+ renderWords();
+ renderFavorites();
+}
+
+// ================================
+// 6. 自动朗读系统
+// ================================
+
+let readerIndex=0;
+let readerRepeat=0;
+let readerRepeatTotal=3;
+let readerActive=false;
+let readerRunId=0;
+let readerTimer=null;
+
+function updateReaderUI(){
+ document.getElementById("readerTitle").textContent=T("readerTitle");
+ document.getElementById("readerDesc").textContent=T("readerDesc");
+ document.getElementById("repeatLabel").textContent=T("repeatLabel");
+ document.getElementById("readerStart").textContent=T("readerStart");
+ document.getElementById("readerStop").textContent=T("readerStop");
+ document.getElementById("readerNote").textContent=T("readerNote");
+
+ document.getElementById("readerStop").disabled=!readerActive;
+ document.getElementById("readerStart").disabled=readerActive;
+ document.getElementById("repeatSelect").disabled=readerActive;
+}
+
+function startAutoRead(){
+ if(!("speechSynthesis" in window)){
+  alert("当前浏览器不支持语音朗读，请使用最新版 Chrome 或 Edge。");
+  return;
+ }
+
+ // 取消之前可能残留的朗读
+ window.speechSynthesis.cancel();
+ clearTimeout(readerTimer);
+
+ readerRunId++;
+ readerIndex=0;
+ readerRepeat=0;
+ readerRepeatTotal=Number(document.getElementById("repeatSelect").value);
+ readerActive=true;
+
+ document.getElementById("readerProgress").style.width="0%";
+ document.getElementById("readerCounter").textContent="0 / 20";
+
+ updateReaderUI();
+ speakCurrentWord(readerRunId);
+}
+
+function speakCurrentWord(runId){
+ if(runId!==readerRunId||!readerActive)return;
+
+ // 所有单词已经完成
+ if(readerIndex>=words.length){
+  readerActive=false;
+  window.speechSynthesis.cancel();
+
+  document.getElementById("readerWord").textContent=T("completed");
+  document.getElementById("readerDetail").textContent=T("completedDetail");
+  document.getElementById("readerStatus").textContent=T("readerDone");
+  document.getElementById("readerCounter").textContent="20 / 20";
+  document.getElementById("readerProgress").style.width="100%";
+
+  updateReaderUI();
+  return;
+ }
+
+ const word=words[readerIndex];
+
+ // 当前单词的指定朗读次数已完成
+ if(readerRepeat>=readerRepeatTotal){
+  readerIndex++;
+  readerRepeat=0;
+
+  if(readerIndex>=words.length){
+   speakCurrentWord(runId);
+   return;
+  }
+
+  readerTimer=setTimeout(()=>{
+   speakCurrentWord(runId);
+  },1000);
+
+  return;
+ }
+
+ // 显示当前单词和进度
+ document.getElementById("readerWord").textContent=word.w;
+ document.getElementById("readerDetail").textContent=word.p+" · "+word.m;
+
+ document.getElementById("readerStatus").textContent=
+  T("reading")+(readerIndex+1)+" / 20";
+
+ document.getElementById("readerCounter").textContent=
+  (readerIndex+1)+" / 20 · "+T("repeat")+
+  (readerRepeat+1)+" / "+readerRepeatTotal;
+
+ document.getElementById("readerProgress").style.width=
+  (readerIndex/words.length*100)+"%";
+
+ // 创建语音
+ const utterance=new SpeechSynthesisUtterance(word.w);
+ utterance.lang="en-US";
+ utterance.rate=.85;
+ utterance.pitch=1;
+ utterance.volume=1;
+
+ utterance.onend=function(){
+  if(runId!==readerRunId||!readerActive)return;
+
+  readerRepeat++;
+
+  readerTimer=setTimeout(()=>{
+   speakCurrentWord(runId);
+  },500);
+ };
+
+ utterance.onerror=function(event){
+  if(runId!==readerRunId||!readerActive)return;
+
+  if(event.error==="canceled"||event.error==="interrupted")return;
+
+  readerActive=false;
+  readerRunId++;
+  window.speechSynthesis.cancel();
+
+  document.getElementById("readerStatus").textContent=
+   lang==="zh"?"朗读出现问题，请重新开始":"Reading error. Please restart.";
+
+  updateReaderUI();
+ };
+
+ window.speechSynthesis.speak(utterance);
+}
+
+function stopAutoRead(){
+ readerRunId++;
+ readerActive=false;
+ clearTimeout(readerTimer);
+
+ if("speechSynthesis" in window){
+  window.speechSynthesis.cancel();
+ }
+
+ document.getElementById("readerWord").textContent=T("stopped");
+ document.getElementById("readerDetail").textContent=T("stoppedDetail");
+ document.getElementById("readerStatus").textContent=T("stopped");
+
+ updateReaderUI();
+}
+
+// ================================
+// 7. 单词测试系统
+// ================================
+
+function startQuiz(){
+ questions=[...words].sort(()=>Math.random()-.5).slice(0,10);
+ answers=Array(10).fill(null);
+ questionIndex=0;
+ renderQuestion();
+}
+
+function getMeaning(word){
+ return lang==="zh"?word.m:word.en;
+}
+
+function renderQuestion(){
+ const area=document.getElementById("quizArea");
+
+ if(questionIndex>=questions.length){
+  finishQuiz();
+  return;
+ }
+
+ const x=questions[questionIndex];
+ const correct=getMeaning(x);
+
+ const choices=[
+  correct,
+  ...words.filter(w=>w.w!==x.w)
+   .sort(()=>Math.random()-.5)
+   .slice(0,3)
+   .map(getMeaning)
+ ].sort(()=>Math.random()-.5);
+
+ area.innerHTML=`
+  <div class="muted">${T("question")} ${questionIndex+1} / 10</div>
+  <div class="progress">
+   <div style="width:${questionIndex*10}%"></div>
+  </div>
+  <div class="question">
+   <h3>${lang==="zh"?"这个单词是什么意思？":"What does this word mean?"}</h3>
+   <div class="word-top">
+    <span class="word">${x.w}</span>
+    <span class="phonetic">${x.p}</span>
+    <button class="btn outline" onclick="speak('${x.w}')">🔊</button>
+   </div>
+   <div class="options">
+    ${choices.map(c=>`
+     <button class="option ${answers[questionIndex]===c?"selected":""}"
+      onclick="chooseAnswer(${JSON.stringify(c).replace(/"/g,"&quot;")})">
+      ${c}
+     </button>
+    `).join("")}
+   </div>
+  </div>
+  <button class="btn primary" onclick="nextQuestion()"
+   ${answers[questionIndex]===null?"disabled":""}>
+   ${questionIndex===9?T("submit"):T("next")}
+  </button>
+ `;
+}
+
+function chooseAnswer(value){
+ answers[questionIndex]=value;
+ renderQuestion();
+}
+
+function nextQuestion(){
+ if(answers[questionIndex]===null)return;
+ questionIndex++;
+ renderQuestion();
+}
+
+function finishQuiz(){
+ let score=0;
+
+ questions.forEach((q,i)=>{
+  if(answers[i]===getMeaning(q))score++;
+ });
+
+ lastScore=Math.round(score/10*100);
+ persist();
+ updateStats();
+
+ document.getElementById("quizArea").innerHTML=`
+  <div class="result">
+   <h3>${T("finish")}</h3>
+   <div style="font-size:32px;font-weight:bold;margin:12px 0">${score} / 10</div>
+   <p>${T("score")}${lastScore}%</p>
+  </div>
+  <div style="margin-top:15px">
+   ${questions.map((q,i)=>`
+    <p class="muted">
+     ${i+1}. <strong style="color:var(--text)">${q.w}</strong>
+     — ${getMeaning(q)}
+     ${answers[i]===getMeaning(q)?"✓":"✗"}
+    </p>
+   `).join("")}
+  </div>
+  <button class="btn primary" onclick="startQuiz()">${T("restart")}</button>
+ `;
+}
+
+// ================================
+// 8. 页面中英文切换
+// ================================
+
+function render(){
+ const ids={
+  subtitle:"subtitle",
+  heroTitle:"hero",
+  heroDesc:"desc",
+  learnedLabel:"learned",
+  learnedHint:"learnedHint",
+  favoriteLabel:"favorite",
+  favoriteHint:"favoriteHint",
+  accuracyLabel:"accuracy",
+  accuracyHint:"accuracyHint",
+  listTitle:"list",
+  quizTitle:"quiz",
+  quizDesc:"quizDesc",
+  favTitle:"favorites",
+  homeLink:"home",
+  vocabLink:"vocab",
+  quizLink:"quizNav",
+  favLink:"favNav"
+ };
+
+ Object.entries(ids).forEach(([id,key])=>{
+  document.getElementById(id).textContent=T(key);
+ });
+
+ document.getElementById("levelTag").textContent=T("level");
+
+ document.getElementById("allTab").textContent=T("all");
+ document.getElementById("unlearnedTab").textContent=T("unlearned");
+ document.getElementById("learnedTab").textContent=T("mastered");
+
+ document.getElementById("startQuiz").textContent=T("start");
+
+ document.getElementById("dateLabel").textContent=
+  new Date().toLocaleDateString(
+   lang==="zh"?"zh-CN":"en-US",
+   {year:"numeric",month:"long",day:"numeric"}
+  )+" · "+(lang==="zh"?"今日单词":"Today's words");
+
+ updateStats();
+ renderWords();
+ renderFavorites();
+ updateReaderUI();
+}
+
+// ================================
+// 9. 页面初始化
+// ================================
+
 render();
 </script>
 </body>
